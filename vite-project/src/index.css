@@ -68,12 +68,20 @@
 }
 @layer base{
         :root{
-        --background: 210 40% 98%;
-        --foreground: 222 47% 11%;
-         --primary: 250 65% 55%;
-        --card: 0 0% 100%;
+       
+        --background: 230 30% 75%;   /* soft cosmic lavender */
+        --foreground: 222 47% 11%;   /* deep navy text */
+        --primary: 250 65% 55%;      /* cosmic purple */
+        --card: 235 50% 98%;         /* tinted card, not white */
         --primary-foreground: 210 40% 98%;
-        --border: 214 32% 91%;
+        --border: 235 25% 88%;       /* soft lavender border */
+
+        /* Sky colors */
+        --cosmic-light-start: 245 80% 95%; /* very soft lavender */
+        --cosmic-light-mid:   230 70% 92%; /* pale periwinkle */
+        --cosmic-light-end:   260 60% 96%; /* pink-lilac */
+        
+
       }
 
       .dark{
@@ -96,6 +104,51 @@
   
   }
 }
+@utility cosmic-light {
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(180, 160, 255, 0.45),
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 20% 40%,
+      rgba(140, 180, 255, 0.35),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(220, 170, 255, 0.35),
+      transparent 50%
+    ),
+    linear-gradient(
+      180deg,
+      hsl(var(--cosmic-light-start)) 0%,
+      hsl(var(--cosmic-light-mid)) 50%,
+      hsl(var(--cosmic-light-end)) 100%
+    );
+}
+
+@utility nebula-particle {
+  @apply absolute rounded-full;
+  background: rgba(140, 120, 255, 0.35);
+  filter: blur(1.5px);
+}
+@keyframes nebula-float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-15px) translateX(10px);
+  }
+}
+
+@utility animate-nebula {
+  animation: nebula-float 14s ease-in-out infinite;
+}
+
+
+
 @utility container {
   margin-inline:auto;
   padding-inline:2rem;
