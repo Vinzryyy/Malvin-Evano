@@ -5,23 +5,25 @@ import { HeroSection } from "../componets/HeroSection";
 import { StarBackground } from "../componets/StarBackground";
 import { SoftSky } from "../componets/SoftSky";
 import { SkillSection } from "../componets/SkillsSection";
+import { ProjectSection } from "../componets/ProjectSection";
+import { Footer } from "../componets/footer";
+
 
 export const Home = () => {
   return (
     <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
-      
+
       {/* Theme Toggle */}
       <ThemeToggle />
 
       {/* Background Effects */}
-        <div className="dark:block hidden">
+      <div className="hidden dark:block">
         <StarBackground />
-        </div>
+      </div>
 
-        <div className="dark:hidden block">
+      <div className="block dark:hidden">
         <SoftSky />
-        </div>
-
+      </div>
 
       {/* Foreground Content */}
       <div className="relative z-10">
@@ -31,10 +33,11 @@ export const Home = () => {
           <HeroSection />
           <AboutMe />
           <SkillSection />
+          <ProjectSection />
         </main>
-      </div>
 
-      {/* Footer (optional) */}
+      </div>
+      <Footer/>
     </div>
   );
 };
