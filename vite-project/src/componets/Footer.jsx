@@ -6,7 +6,7 @@ export const Footer = () => {
       <div className="container mx-auto max-w-5xl flex flex-wrap items-center justify-between gap-4">
         
         <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Your Portfolio — All rights reserved.
+          © {new Date().getFullYear()} Malvin Evano — All rights reserved.
         </p>
 
         {/* Social Links */}
